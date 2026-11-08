@@ -1,0 +1,1628 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Aurelian Private Estates</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Hanken+Grotesk:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: arched hero over a quiet collection grid; ink-green ground, ivory type, one brass accent. */
+:root {
+  --bg: #0c1210;
+  --bg2: #101a16;
+  --surface: #15201c;
+  --raise: #1c2a25;
+  --line: #2b3c35;
+  --fg: #ece6d8;
+  --muted: #a2ab9f;
+  --brass: #c9a96e;
+  --brass-ink: #17120a;
+  --ok: #8fc29f;
+  --warn: #e1b866;
+  --bad: #e58f7f;
+  --shadow: 0 24px 60px rgba(0, 0, 0, .45);
+  --display: 'Bodoni Moda', 'Bodoni 72', Didot, Georgia, serif;
+  --body: 'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f4f0e6; --bg2: #ece6d6; --surface: #fbf8f0; --raise: #efe9da; --line: #d6cdb7;
+    --fg: #16201c; --muted: #596459; --brass: #8a6a2c; --brass-ink: #fbf6e8;
+    --ok: #2f6f48; --warn: #8a6410; --bad: #a4402f; --shadow: 0 24px 60px rgba(40, 32, 12, .18);
+    color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #f4f0e6; --bg2: #ece6d6; --surface: #fbf8f0; --raise: #efe9da; --line: #d6cdb7;
+  --fg: #16201c; --muted: #596459; --brass: #8a6a2c; --brass-ink: #fbf6e8;
+  --ok: #2f6f48; --warn: #8a6410; --bad: #a4402f; --shadow: 0 24px 60px rgba(40, 32, 12, .18);
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: #0c1210; --bg2: #101a16; --surface: #15201c; --raise: #1c2a25; --line: #2b3c35;
+  --fg: #ece6d8; --muted: #a2ab9f; --brass: #c9a96e; --brass-ink: #17120a;
+  --ok: #8fc29f; --warn: #e1b866; --bad: #e58f7f; --shadow: 0 24px 60px rgba(0, 0, 0, .45);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 400 16px/1.65 var(--body); -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  background: var(--bg); z-index: 30;
+}
+h1, h2, h3, h4 { font-family: var(--display); font-weight: 400; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+a { color: inherit; }
+img, svg { max-width: 100%; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+
+.wrap {
+  max-width: 1280px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 900px) {
+  .wrap {
+    padding-left: max(36px, env(safe-area-inset-left, 0px));
+    padding-right: max(36px, env(safe-area-inset-right, 0px));
+  }
+}
+.eyebrow { font-size: .72rem; letter-spacing: .24em; text-transform: uppercase; color: var(--brass); font-weight: 500; }
+.muted { color: var(--muted); }
+
+/* buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 13px 26px; border: 1px solid var(--brass); background: var(--brass); color: var(--brass-ink);
+  font-weight: 500; font-size: .82rem; letter-spacing: .14em; text-transform: uppercase; text-decoration: none;
+  cursor: pointer; border-radius: 2px; transition: background .25s, color .25s, border-color .25s;
+}
+.btn:hover { background: transparent; color: var(--brass); }
+.btn.ghost { background: transparent; color: var(--fg); border-color: var(--line); }
+.btn.ghost:hover { border-color: var(--brass); color: var(--brass); }
+.btn.sm { padding: 8px 14px; font-size: .72rem; }
+.btn.icon { padding: 8px 12px; font-size: .95rem; letter-spacing: 0; }
+.btn.danger { border-color: var(--bad); color: var(--bad); background: transparent; }
+.btn.danger:hover { background: var(--bad); color: var(--bg); }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.link-btn { background: none; border: 0; padding: 0; color: var(--brass); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+
+/* header */
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: var(--bg); background: color-mix(in srgb, var(--bg) 90%, transparent);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; min-width: 0; }
+.brand-mark {
+  width: 38px; height: 38px; flex: none; display: grid; place-items: center;
+  border: 1px solid var(--brass); color: var(--brass); font: italic 500 1.3rem/1 var(--display);
+  border-radius: 999px 999px 2px 2px;
+}
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; min-width: 0; }
+.brand-text b { font: 500 1.05rem/1.1 var(--display); letter-spacing: .26em; text-transform: uppercase; }
+.brand-text i { font-style: normal; font-size: .62rem; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); margin-top: 3px; }
+.nav { display: none; gap: 30px; }
+.nav a { text-decoration: none; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
+.nav a:hover { color: var(--brass); }
+.bar-actions { display: flex; gap: 8px; align-items: center; }
+@media (min-width: 860px) { .nav { display: flex; } }
+@media (max-width: 520px) { .brand-text i { display: none; } #btnChatTop { display: none; } }
+
+/* hero */
+.hero-grid {
+  display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(28px, 5vw, 80px);
+  align-items: center; padding-block: clamp(36px, 6vw, 88px);
+}
+.hero-copy { min-width: 0; display: flex; flex-direction: column; gap: 26px; }
+.hero-copy h1 { font-size: clamp(2.7rem, 6.4vw, 5.6rem); line-height: 1.02; letter-spacing: -.015em; }
+.hero-copy h1 em { font-style: italic; color: var(--brass); }
+.lede { font-size: 1.1rem; color: var(--muted); max-width: 52ch; font-weight: 300; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero-note { font-size: .82rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 18px; max-width: 52ch; }
+.hero-note button { font-size: inherit; }
+.arch {
+  position: relative; margin: 0; width: 100%; max-width: 520px; justify-self: end;
+  aspect-ratio: 4 / 5; border-radius: 999px 999px 4px 4px; overflow: hidden;
+  border: 1px solid var(--line); box-shadow: var(--shadow); background: var(--surface);
+}
+.arch > .art, .arch > .art svg { width: 100%; height: 100%; display: block; }
+.arch::after {
+  content: ""; position: absolute; inset: 12px; border-radius: 999px 999px 2px 2px;
+  border: 1px solid rgba(236, 230, 216, .28); pointer-events: none;
+}
+.arch-cap {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 56px 28px 30px; text-align: left;
+  background: linear-gradient(to top, rgba(6, 10, 8, .88), rgba(6, 10, 8, 0));
+  color: #f3ede0; border: 0; width: 100%; cursor: pointer;
+}
+.arch-cap small { display: block; font-size: .66rem; letter-spacing: .26em; text-transform: uppercase; color: #d9bd86; }
+.arch-cap strong { display: block; font: 400 1.6rem/1.15 var(--display); margin-top: 6px; }
+.arch-cap span { font-size: .85rem; color: #d8d2c3; }
+@media (max-width: 860px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .arch { justify-self: center; max-width: 440px; }
+}
+@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.hero-copy > * { animation: rise .9s cubic-bezier(.2, .7, .2, 1) both; }
+.hero-copy > *:nth-child(2) { animation-delay: .08s; }
+.hero-copy > *:nth-child(3) { animation-delay: .16s; }
+.hero-copy > *:nth-child(4) { animation-delay: .24s; }
+.hero-copy > *:nth-child(5) { animation-delay: .32s; }
+
+/* sections */
+.sec { padding-block: clamp(52px, 7vw, 100px); }
+.band { background: var(--bg2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.sec-head { display: flex; flex-direction: column; gap: 14px; max-width: 60ch; }
+.sec-head h2 { font-size: clamp(2rem, 4.2vw, 3.3rem); line-height: 1.08; }
+.sec-head p { color: var(--muted); font-weight: 300; }
+
+/* filters */
+.filters { display: flex; flex-wrap: wrap; gap: 14px 20px; align-items: center; justify-content: space-between; margin: 34px 0 30px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; min-width: 0; }
+.chip {
+  border: 1px solid var(--line); background: transparent; color: var(--muted); padding: 7px 16px;
+  border-radius: 999px; font-size: .78rem; letter-spacing: .08em; cursor: pointer; transition: all .2s;
+}
+.chip:hover { border-color: var(--brass); color: var(--brass); }
+.chip[aria-pressed="true"] { background: var(--brass); border-color: var(--brass); color: var(--brass-ink); }
+.ctrls { display: flex; flex-wrap: wrap; gap: 10px; min-width: 0; }
+.fld-inline {
+  background: var(--surface); border: 1px solid var(--line); padding: 9px 12px; border-radius: 2px;
+  font-size: .85rem; min-width: 0; max-width: 100%;
+}
+.fld-inline:focus { border-color: var(--brass); }
+.count { font-size: .8rem; color: var(--muted); letter-spacing: .06em; }
+
+/* cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: 28px; }
+.card {
+  position: relative; display: flex; flex-direction: column; min-width: 0; overflow: hidden;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 3px;
+  transition: transform .4s cubic-bezier(.2, .7, .2, 1), border-color .3s, box-shadow .4s;
+}
+.card:hover { transform: translateY(-4px); border-color: var(--brass); box-shadow: var(--shadow); }
+.card .art { aspect-ratio: 4 / 3; overflow: hidden; background: var(--bg2); }
+.card .art img, .arch .art img { width:100%; height:100%; object-fit:cover; display:block; }\n.card .art svg { width: 100%; height: 100%; display: block; transition: transform .8s cubic-bezier(.2, .7, .2, 1); }
+.card:hover .art svg { transform: scale(1.05); }
+.badge {
+  position: absolute; top: 14px; left: 14px; z-index: 2; display: inline-flex; align-items: center; gap: 7px;
+  padding: 5px 11px; border-radius: 999px; background: rgba(8, 12, 10, .74); color: #f3ede0;
+  font-size: .66rem; letter-spacing: .16em; text-transform: uppercase;
+}
+.badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #8fc29f; }
+.badge.under-offer::before { background: #e1b866; }
+.badge.sold::before { background: #e58f7f; }
+.badge.star { left: auto; right: 14px; color: #d9bd86; }
+.badge.star::before { display: none; }
+.card-body { display: flex; flex-direction: column; gap: 8px; padding: 22px 22px 24px; flex: 1; }
+.kind { font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--brass); }
+.card h3 { font-size: 1.55rem; line-height: 1.15; }
+.card h3 button { all: unset; cursor: pointer; }
+.card h3 button::after { content: ""; position: absolute; inset: 0; }
+.card h3 button:focus-visible { outline: 2px solid var(--brass); outline-offset: 6px; }
+.loc { color: var(--muted); font-size: .9rem; }
+.price { font: 400 1.4rem/1.2 var(--display); margin-top: 6px; }
+.specs { display: flex; flex-wrap: wrap; gap: 4px 16px; color: var(--muted); font-size: .82rem; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); }
+.empty { padding: 60px 20px; text-align: center; border: 1px dashed var(--line); color: var(--muted); display: flex; flex-direction: column; gap: 14px; align-items: center; }
+.empty h3 { font-size: 1.6rem; color: var(--fg); }
+
+/* services */
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 36px; margin-top: 44px; }
+.col { display: flex; flex-direction: column; gap: 12px; padding-top: 22px; border-top: 1px solid var(--brass); min-width: 0; }
+.col h3 { font-size: 1.5rem; }
+.col p { color: var(--muted); font-weight: 300; }
+
+/* contact */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 80px); align-items: start; }
+@media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+.contact-info { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+.contact-info dl { margin: 0; display: grid; gap: 14px; }
+.contact-info dt { font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--brass); }
+.contact-info dd { margin: 2px 0 0; display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; overflow-wrap: anywhere; }
+
+/* forms */
+.iform { display: grid; gap: 14px; min-width: 0; }
+.iform .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 560px) { .iform .row { grid-template-columns: 1fr; } }
+.fld { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.fld > span { font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+.fld input, .fld select, .fld textarea {
+  width: 100%; background: var(--bg); border: 1px solid var(--line); padding: 11px 13px; border-radius: 2px; min-width: 0;
+}
+.fld textarea { resize: vertical; min-height: 96px; }
+.fld input:focus, .fld select:focus, .fld textarea:focus { border-color: var(--brass); outline: none; }
+.fld.check { flex-direction: row; align-items: center; gap: 10px; }
+.fld.check input { width: auto; }
+.form-status { font-size: .88rem; min-height: 1.3em; overflow-wrap: anywhere; }
+.form-status.ok { color: var(--ok); }
+.form-status.err { color: var(--bad); }
+
+/* footer */
+.foot { padding-block: 36px; border-top: 1px solid var(--line); color: var(--muted); font-size: .82rem; }
+.foot .wrap { display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: space-between; align-items: center; }
+.foot p { max-width: 70ch; }
+
+/* dialogs */
+dialog {
+  background: var(--surface); color: var(--fg); border: 1px solid var(--line); padding: 0;
+  width: min(1100px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); overflow: auto;
+  box-shadow: var(--shadow); border-radius: 4px;
+}
+dialog::backdrop { background: rgba(4, 8, 6, .72); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); }
+dialog.narrow { width: min(760px, calc(100vw - 24px)); }
+.dlg-close { position: sticky; top: 0; float: right; z-index: 5; margin: 12px 12px 0 0; }
+.detail { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(20px, 4vw, 52px); padding: clamp(18px, 3.5vw, 44px); clear: both; }
+@media (max-width: 800px) { .detail { grid-template-columns: 1fr; } }
+.detail .arch { max-width: 420px; justify-self: center; position: relative; }
+.detail-side { min-width: 0; align-self: start; position: sticky; top: 12px; }
+@media (max-width: 800px) { .detail-side { position: static; } }
+.detail-main { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.detail-main h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.08; }
+.detail-price { font: 400 1.9rem/1.2 var(--display); color: var(--brass); }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.facts div { background: var(--surface); padding: 14px; min-width: 0; }
+.facts dt { font-size: .64rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+.facts dd { margin: 4px 0 0; font: 400 1.2rem/1.25 var(--display); overflow-wrap: anywhere; }
+.facts dd small { display: block; font: 400 .74rem var(--body); color: var(--muted); }
+.feat { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 24px; }
+.feat li { padding-left: 18px; position: relative; color: var(--muted); font-size: .92rem; }
+.feat li::before { content: ""; position: absolute; left: 0; top: .72em; width: 8px; height: 1px; background: var(--brass); }
+.detail-main h4 { font-size: 1.3rem; }
+.sold-note { border: 1px dashed var(--line); padding: 18px; color: var(--muted); display: grid; gap: 12px; justify-items: start; }
+
+/* chat */
+.chat-fab {
+  position: fixed; z-index: 40; right: max(16px, env(safe-area-inset-right, 0px));
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  display: inline-flex; align-items: center; gap: 10px; padding: 13px 20px; border-radius: 999px;
+  background: var(--brass); color: var(--brass-ink); border: 0; cursor: pointer; box-shadow: var(--shadow);
+  font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 500;
+}
+.chat-fab svg { width: 18px; height: 18px; }
+.chat {
+  position: fixed; z-index: 40; right: max(16px, env(safe-area-inset-right, 0px));
+  bottom: calc(78px + env(safe-area-inset-bottom, 0px));
+  width: min(400px, calc(100vw - 32px)); height: min(580px, calc(100dvh - 140px));
+  display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line);
+  border-radius: 6px; box-shadow: var(--shadow); overflow: hidden;
+}
+.chat-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 16px 18px; border-bottom: 1px solid var(--line); background: var(--bg2); }
+.chat-head h3 { font: italic 400 1.35rem/1.1 var(--display); }
+.chat-head small { display: block; font-size: .64rem; letter-spacing: .22em; text-transform: uppercase; color: var(--brass); margin-top: 3px; }
+.chat-log { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; min-height: 0; }
+.msg { max-width: 88%; padding: 11px 14px; border-radius: 4px; font-size: .92rem; line-height: 1.55; overflow-wrap: anywhere; white-space: pre-wrap; }
+.msg.bot { align-self: flex-start; background: var(--raise); border: 1px solid var(--line); }
+.msg.me { align-self: flex-end; background: var(--brass); color: var(--brass-ink); }
+.msg.pending { color: var(--muted); font-style: italic; }
+.mchips { align-self: flex-start; display: flex; flex-wrap: wrap; gap: 8px; max-width: 100%; }
+.mchip {
+  background: transparent; border: 1px solid var(--brass); color: var(--brass); padding: 7px 12px; border-radius: 999px;
+  font-size: .78rem; cursor: pointer; text-align: left; max-width: 100%;
+}
+.mchip:hover { background: var(--brass); color: var(--brass-ink); }
+.chat-sugg { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 16px 12px; }
+.chat-form { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--line); }
+.chat-form input { flex: 1; min-width: 0; background: var(--bg); border: 1px solid var(--line); padding: 11px 13px; border-radius: 2px; }
+.chat-form input:focus { border-color: var(--brass); outline: none; }
+
+/* admin */
+.adm { padding: clamp(18px, 3vw, 36px); clear: both; display: grid; gap: 20px; }
+.adm h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); }
+.adm-top { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; align-items: end; }
+.tabs { display: flex; gap: 6px; border-bottom: 1px solid var(--line); }
+.tab { background: none; border: 0; padding: 10px 16px; cursor: pointer; color: var(--muted); border-bottom: 2px solid transparent; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; }
+.tab[aria-selected="true"] { color: var(--brass); border-bottom-color: var(--brass); }
+.adm-bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.notice { border: 1px solid var(--line); background: var(--bg2); padding: 14px 16px; font-size: .9rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; }
+.tbl-wrap { overflow-x: auto; border: 1px solid var(--line); }
+.tbl { width: 100%; border-collapse: collapse; font-size: .88rem; min-width: 760px; }
+.tbl th { text-align: left; font-size: .64rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); padding: 12px 14px; background: var(--bg2); font-weight: 500; }
+.tbl td { padding: 12px 14px; border-top: 1px solid var(--line); vertical-align: middle; }
+.tbl td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tbl .nm { font: 400 1.1rem/1.2 var(--display); }
+.tbl .acts { display: flex; gap: 6px; flex-wrap: wrap; }
+.inq { display: grid; gap: 14px; }
+.inq-card { border: 1px solid var(--line); padding: 16px 18px; display: grid; gap: 8px; background: var(--bg2); min-width: 0; }
+.inq-card.handled { opacity: .7; }
+.inq-head { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; justify-content: space-between; }
+.inq-head strong { font: 400 1.2rem/1.2 var(--display); }
+.inq-meta { display: flex; flex-wrap: wrap; gap: 4px 18px; color: var(--muted); font-size: .84rem; overflow-wrap: anywhere; }
+.inq-msg { white-space: pre-wrap; overflow-wrap: anywhere; }
+.pill { display: inline-block; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.pill.new { border-color: var(--brass); color: var(--brass); }
+.lf { padding: clamp(18px, 3vw, 32px); clear: both; display: grid; gap: 18px; }
+.lf .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
+.lf .prev { aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid var(--line); }
+.lf .prev svg { width: 100%; height: 100%; display: block; }
+.lock { padding: 60px 24px; text-align: center; display: grid; gap: 16px; justify-items: center; clear: both; }
+.lock h2 { font-size: 2rem; }
+.lock p { color: var(--muted); max-width: 46ch; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+</style>
+
+<header class="top" id="top">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Aurelian Private Estates, home">
+      <span class="brand-mark" aria-hidden="true">A</span>
+      <span class="brand-text"><b>Aurelian</b><i>Private Estates</i></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#collection">Collection</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="bar-actions">
+      <button class="btn ghost sm" id="btnChatTop" type="button">Concierge</button>
+      <button class="btn ghost sm" id="btnAdminTop" type="button" hidden>Admin</button>
+      <button class="btn ghost sm icon" id="btnTheme" type="button" aria-label="Switch between light and dark appearance">&#9680;</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Private estates, worldwide</p>
+        <h1>Addresses that <em>outlast</em> generations.</h1>
+        <p class="lede">Aurelian represents a small number of exceptional homes, from Pacific cliffs to Alpine slopes. Each residence is introduced in person, and several never reach the open market.</p>
+        <div class="cta">
+          <a class="btn" href="#collection">View the collection</a>
+          <button class="btn ghost" id="btnChatHero" type="button">Speak with the concierge</button>
+        </div>
+        <p class="hero-note">All figures are asking prices in US dollars. Areas are shown in square metres with square feet alongside.</p>
+      </div>
+      <figure class="arch" id="heroArt"></figure>
+    </div>
+  </section>
+
+  <section class="sec" id="collection">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">The collection</p>
+        <h2>Residences held in trust for the next owner</h2>
+        <p>Filter by type, region or budget. Open any residence for the full particulars and to request a private viewing.</p>
+      </div>
+      <div class="filters">
+        <div class="chips" id="typeChips" role="group" aria-label="Filter by property type"></div>
+        <div class="ctrls">
+          <label class="visually-hidden" for="fSearch" style="position:absolute;left:-9999px">Search by place or name</label>
+          <input class="fld-inline" id="fSearch" type="search" placeholder="Search place or name" autocomplete="off">
+          <label class="visually-hidden" for="fMax" style="position:absolute;left:-9999px">Maximum price</label>
+          <select class="fld-inline" id="fMax">
+            <option value="0">Any price</option>
+            <option value="15000000">Up to $15M</option>
+            <option value="30000000">Up to $30M</option>
+            <option value="50000000">Up to $50M</option>
+          </select>
+          <label class="visually-hidden" for="fSort" style="position:absolute;left:-9999px">Sort order</label>
+          <select class="fld-inline" id="fSort">
+            <option value="featured">Featured first</option>
+            <option value="high">Price, high to low</option>
+            <option value="low">Price, low to high</option>
+          </select>
+        </div>
+      </div>
+      <p class="count" id="count" role="status" aria-live="polite"></p>
+      <div class="grid" id="grid" style="margin-top:18px"></div>
+    </div>
+  </section>
+
+  <section class="sec band" id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Services</p>
+        <h2>Discretion is the first amenity</h2>
+      </div>
+      <div class="cols">
+        <div class="col">
+          <h3>Off-market introductions</h3>
+          <p>A number of our residences are shown only to qualified principals. Tell us what you are looking for and we will make quiet inquiries on your behalf.</p>
+        </div>
+        <div class="col">
+          <h3>Private viewings worldwide</h3>
+          <p>We arrange viewings by appointment, including transfers by car, helicopter or yacht where a property calls for it, and we host your advisers and family.</p>
+        </div>
+        <div class="col">
+          <h3>Acquisition support</h3>
+          <p>We work alongside your lawyers, tax advisers and family office on due diligence, structuring and handover, and keep every step confidential.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-info">
+        <p class="eyebrow">Private office</p>
+        <h2 style="font-size:clamp(2rem,4.2vw,3.3rem);line-height:1.08">Begin a confidential conversation</h2>
+        <p class="muted" style="font-weight:300;max-width:50ch">Share a little about what you have in mind. A member of the private office will reply personally. You can also ask our concierge about the collection at any hour.</p>
+        <dl>
+          <div>
+            <dt>Email</dt>
+            <dd><span id="mailText">private@aurelianestates.example</span> <button class="btn ghost sm" type="button" id="btnCopyMail">Copy</button></dd>
+          </div>
+          <div>
+            <dt>Hours</dt>
+            <dd>By appointment, every day</dd>
+          </div>
+        </dl>
+      </div>
+      <div id="contactForm"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>Aurelian Private Estates. The portfolio shown is illustrative. Asking prices are in US dollars and subject to change, and nothing here is an offer or advice.</p>
+    <a href="#admin" id="footAdmin">Admin</a>
+  </div>
+</footer>
+
+<!-- Detail dialog -->
+<dialog id="detail" aria-label="Residence details">
+  <button class="btn ghost sm dlg-close" type="button" data-close="detail">Close</button>
+  <div id="detailBody"></div>
+</dialog>
+
+<!-- Admin dialog -->
+<dialog id="admin" aria-label="Admin panel">
+  <button class="btn ghost sm dlg-close" type="button" data-close="admin">Close</button>
+  <div id="adminBody"></div>
+</dialog>
+
+<!-- Listing form dialog -->
+<dialog id="listingDlg" class="narrow" aria-label="Edit listing">
+  <button class="btn ghost sm dlg-close" type="button" data-close="listingDlg">Cancel</button>
+  <div id="listingBody"></div>
+</dialog>
+
+<!-- Chat -->
+<button class="chat-fab" id="chatFab" type="button" aria-expanded="false" aria-controls="chat">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" stroke-linejoin="round"/></svg>
+  Concierge
+</button>
+<section class="chat" id="chat" hidden aria-label="Concierge chat">
+  <div class="chat-head">
+    <div><h3>Private concierge</h3><small>Aurelian Private Estates</small></div>
+    <button class="btn ghost sm" type="button" id="chatClose">Close</button>
+  </div>
+  <div class="chat-log" id="chatLog" aria-live="polite"></div>
+  <div class="chat-sugg" id="chatSugg"></div>
+  <form class="chat-form" id="chatForm" autocomplete="off">
+    <label for="chatInput" style="position:absolute;left:-9999px">Message the concierge</label>
+    <input id="chatInput" type="text" placeholder="Ask about a region, style or budget" maxlength="400">
+    <button class="btn sm" type="submit" id="chatSend">Send</button>
+  </form>
+</section>
+
+<script>
+(function () {
+'use strict';
+
+var CONTACT_EMAIL = 'private@aurelianestates.example';\nvar ADMIN_PASSWORD = 'Idole2412';\nvar adminUnlocked = false;
+var DEFAULTS = [
+ {
+  "id": "sunset-ridge-residence",
+  "name": "Sunset Ridge Residence",
+  "city": "Beverly Hills",
+  "region": "California",
+  "country": "United States",
+  "type": "Villa",
+  "price": 38500000,
+  "beds": 7,
+  "baths": 10,
+  "sqm": 1250,
+  "land": "1.4 acres",
+  "year": 2022,
+  "status": "Available",
+  "featured": true,
+  "tagline": "A cantilevered glass pavilion above the city.",
+  "desc": "Set on a private ridge above Sunset Boulevard, this architect-designed residence stacks two cantilevered levels of floor-to-ceiling glass over a 25-metre infinity pool. Every principal room faces the canyon and the Los Angeles skyline beyond, with a separate guest house and a motor court for eight cars.",
+  "features": [
+   "25 m infinity pool and spa",
+   "Screening room and wine cellar",
+   "Detached two-bedroom guest house",
+   "Eight-car motor court",
+   "Full-time security gatehouse",
+   "Smart-home and solar integration"
+  ],
+  "scene": {
+   "kind": "modern",
+   "seed": 3
+  }
+ },
+ {
+  "id": "chateau-des-lavandes",
+  "name": "Château des Lavandes",
+  "city": "Gordes",
+  "region": "Provence",
+  "country": "France",
+  "type": "Château",
+  "price": 14900000,
+  "beds": 11,
+  "baths": 9,
+  "sqm": 1800,
+  "land": "22 acres",
+  "year": 1789,
+  "status": "Available",
+  "featured": true,
+  "tagline": "Eighteenth-century stone, restored to the last shutter.",
+  "desc": "A listed eighteenth-century château in the Luberon, restored between 2017 and 2019 with period limestone floors, vaulted cellars and a tower suite. Lavender terraces, a heated pool and a working olive grove surround the house, ten minutes from the village of Gordes.",
+  "features": [
+   "Tower suite and orangery",
+   "Vaulted wine cellar",
+   "Heated pool with pool house",
+   "Olive grove and lavender terraces",
+   "Gatekeeper's cottage",
+   "Helipad access by arrangement"
+  ],
+  "scene": {
+   "kind": "chateau",
+   "seed": 6
+  }
+ },
+ {
+  "id": "park-crown-penthouse",
+  "name": "Park Crown Penthouse",
+  "city": "New York",
+  "region": "New York",
+  "country": "United States",
+  "type": "Penthouse",
+  "price": 52000000,
+  "beds": 5,
+  "baths": 6,
+  "sqm": 640,
+  "land": "Full-floor, 78th level",
+  "year": 2021,
+  "status": "Available",
+  "featured": true,
+  "tagline": "The entire top floor, facing the park.",
+  "desc": "A full-floor penthouse on Central Park South with 360-degree views from the Hudson to the East River. A private elevator opens into a 14-metre gallery, and the primary suite occupies the northern corner overlooking the park.",
+  "features": [
+   "Private elevator landing",
+   "Wraparound terrace",
+   "Double-height library",
+   "24-hour concierge and valet",
+   "Residents' spa and 25 m pool",
+   "Two deeded parking spaces"
+  ],
+  "scene": {
+   "kind": "skyline",
+   "seed": 1
+  }
+ },
+ {
+  "id": "villa-serenissima",
+  "name": "Villa Serenissima",
+  "city": "Cernobbio",
+  "region": "Lake Como",
+  "country": "Italy",
+  "type": "Waterfront",
+  "price": 27800000,
+  "beds": 9,
+  "baths": 10,
+  "sqm": 1450,
+  "land": "3.2 acres",
+  "year": 1912,
+  "status": "Under Offer",
+  "featured": false,
+  "tagline": "Belle Époque lakefront with its own boathouse.",
+  "desc": "A Belle Époque villa with 90 metres of private lakefront, a frescoed salon and terraced Italian gardens descending to a stone boathouse. Fully modernised in 2020 while keeping its original staircases, plasterwork and painted ceilings.",
+  "features": [
+   "90 m private lake frontage",
+   "Stone boathouse with two moorings",
+   "Frescoed salon and ballroom",
+   "Terraced Italian gardens",
+   "Lakeside pool and loggia",
+   "Staff wing with six rooms"
+  ],
+  "scene": {
+   "kind": "coastal",
+   "seed": 5
+  }
+ },
+ {
+  "id": "aurora-chalet",
+  "name": "Aurora Chalet",
+  "city": "Aspen",
+  "region": "Colorado",
+  "country": "United States",
+  "type": "Chalet",
+  "price": 24500000,
+  "beds": 8,
+  "baths": 11,
+  "sqm": 1100,
+  "land": "6.5 acres",
+  "year": 2020,
+  "status": "Available",
+  "featured": true,
+  "tagline": "Ski-in, ski-out, with a mountain to itself.",
+  "desc": "A timber-and-stone chalet on Red Mountain with direct ski access, heated drives and a great room framed by a three-storey stone fireplace. Eight en-suite bedrooms, a children's bunk room and a four-lane indoor bowling alley make it a residence for the whole family at once.",
+  "features": [
+   "Ski-in, ski-out access",
+   "Indoor pool, sauna and steam room",
+   "Four-lane bowling alley",
+   "Heated driveway and walkways",
+   "Ski room with boot warmers",
+   "Chef's kitchen with staff kitchen"
+  ],
+  "scene": {
+   "kind": "chalet",
+   "seed": 2
+  }
+ },
+ {
+  "id": "palm-crescent-estate",
+  "name": "Palm Crescent Estate",
+  "city": "Palm Jumeirah",
+  "region": "Dubai",
+  "country": "United Arab Emirates",
+  "type": "Beachfront",
+  "price": 21900000,
+  "beds": 7,
+  "baths": 9,
+  "sqm": 1300,
+  "land": "55 m private beach",
+  "year": 2019,
+  "status": "Available",
+  "featured": false,
+  "tagline": "A private beach on the Crescent.",
+  "desc": "A signature villa on the Palm's outer crescent with 55 metres of private beach and an uninterrupted view of the Arabian Gulf. Cooled marble floors, a majlis, an elevator to all three levels and a rooftop lounge facing the sunset.",
+  "features": [
+   "55 m private beach",
+   "Rooftop lounge and kitchen",
+   "Home cinema and majlis",
+   "Residence elevator",
+   "Landscaped pool terrace",
+   "Staff quarters and four-car garage"
+  ],
+  "scene": {
+   "kind": "coastal",
+   "seed": 8
+  }
+ },
+ {
+  "id": "the-cove-residence",
+  "name": "The Cove Residence",
+  "city": "Sentosa Cove",
+  "region": "Singapore",
+  "country": "Singapore",
+  "type": "Waterfront",
+  "price": 33000000,
+  "beds": 6,
+  "baths": 7,
+  "sqm": 1020,
+  "land": "Freehold, with yacht berth",
+  "year": 2023,
+  "status": "Available",
+  "featured": false,
+  "tagline": "Freehold, with a 25 m yacht berth at the door.",
+  "desc": "A freehold waterfront home in Sentosa Cove with its own 25-metre berth, a cantilevered pool deck and open living spaces that slide fully into the walls. Completed in 2023 with passive cooling, and ten minutes from the city by car.",
+  "features": [
+   "Private 25 m yacht berth",
+   "Cantilevered pool deck",
+   "Fully retractable glazing",
+   "Passive cooling design",
+   "Home office suite",
+   "Gated enclave with marina club access"
+  ],
+  "scene": {
+   "kind": "modern",
+   "seed": 4
+  }
+ },
+ {
+  "id": "forbes-park-manor",
+  "name": "Forbes Park Manor",
+  "city": "Makati",
+  "region": "Metro Manila",
+  "country": "Philippines",
+  "type": "Estate",
+  "price": 9800000,
+  "beds": 8,
+  "baths": 9,
+  "sqm": 1600,
+  "land": "4,200 m² lot",
+  "year": 2017,
+  "status": "Available",
+  "featured": false,
+  "tagline": "Tropical modern, behind the gates of Forbes Park.",
+  "desc": "A tropical-modern family estate on a 4,200 m² lot in Forbes Park, with deep verandas, a courtyard garden and a lap pool shaded by mature acacias. Eight bedrooms across two wings, a separate staff residence and a four-car garage, minutes from the Makati business district.",
+  "features": [
+   "4,200 m² landscaped lot",
+   "Courtyard garden and lap pool",
+   "Separate staff residence",
+   "Four-car garage",
+   "Backup power and water storage",
+   "Within a guarded village with 24-hour security"
+  ],
+  "scene": {
+   "kind": "modern",
+   "seed": 9
+  }
+ },
+ {
+  "id": "mayfair-townhouse",
+  "name": "Mayfair Townhouse",
+  "city": "London",
+  "region": "Mayfair",
+  "country": "United Kingdom",
+  "type": "Townhouse",
+  "price": 31400000,
+  "beds": 7,
+  "baths": 8,
+  "sqm": 980,
+  "land": "Private garden and mews",
+  "year": 1824,
+  "status": "Available",
+  "featured": false,
+  "tagline": "A Georgian address with a garden of its own.",
+  "desc": "A Grade II listed Georgian townhouse in the heart of Mayfair, restored with original cornicing, a cantilevered stone staircase and a private walled garden. A lift serves all six floors, and the former coach house at the rear now holds a gym and a two-bedroom mews flat.",
+  "features": [
+   "Grade II listed, fully restored",
+   "Private walled garden",
+   "Six-floor lift",
+   "Coach house with gym and mews flat",
+   "Library and cigar room",
+   "Secure underground parking"
+  ],
+  "scene": {
+   "kind": "chateau",
+   "seed": 7
+  }
+ },
+ {
+  "id": "point-dume-compound",
+  "name": "Point Dume Compound",
+  "city": "Malibu",
+  "region": "California",
+  "country": "United States",
+  "type": "Beachfront",
+  "price": 46000000,
+  "beds": 6,
+  "baths": 8,
+  "sqm": 920,
+  "land": "2.1 acres, 110 ft of sand",
+  "year": 2018,
+  "status": "Available",
+  "featured": true,
+  "tagline": "Three structures, one stretch of private sand.",
+  "desc": "A three-structure compound on Point Dume with 110 feet of private sand frontage: a main house, a surf studio and a guest pavilion linked by a reflecting pool. Weathered cedar, polished concrete and walls of glass that open entirely to the Pacific.",
+  "features": [
+   "110 ft of private sand frontage",
+   "Main house, surf studio and guest pavilion",
+   "Reflecting pool and fire terrace",
+   "Outdoor kitchen and cold plunge",
+   "Rainwater harvesting and solar",
+   "Gated beach-side parking"
+  ],
+  "scene": {
+   "kind": "coastal",
+   "seed": 10
+  }
+ },
+ {
+  "id": "isla-caracol",
+  "name": "Isla Caracol",
+  "city": "Turneffe Atoll",
+  "region": "Caribbean",
+  "country": "Belize",
+  "type": "Island",
+  "price": 18500000,
+  "beds": 6,
+  "baths": 7,
+  "sqm": 780,
+  "land": "14 acres, freehold island",
+  "year": 2016,
+  "status": "Available",
+  "featured": true,
+  "tagline": "A freehold island with its own reef.",
+  "desc": "A 14-acre freehold island on the Turneffe Atoll with a main villa, three guest bungalows and a deep-water jetty, surrounded by a protected reef. Powered by solar and a backup generator, with its own desalination plant and a helipad for the 20-minute transfer from the mainland.",
+  "features": [
+   "14-acre freehold island",
+   "Main villa and three guest bungalows",
+   "Deep-water jetty and boathouse",
+   "Helipad and private airstrip access",
+   "Solar power with desalination",
+   "Protected reef for diving and fishing"
+  ],
+  "scene": {
+   "kind": "island",
+   "seed": 11
+  }
+ },
+ {
+  "id": "star-island-residence",
+  "name": "Star Island Residence",
+  "city": "Miami Beach",
+  "region": "Florida",
+  "country": "United States",
+  "type": "Waterfront",
+  "price": 29900000,
+  "beds": 8,
+  "baths": 11,
+  "sqm": 1350,
+  "land": "0.9 acres, 150 ft of bayfront",
+  "year": 2021,
+  "status": "Sold",
+  "featured": false,
+  "tagline": "Sold: 150 feet of bayfront on Star Island.",
+  "desc": "A newly built bayfront residence on Star Island with 150 feet of water frontage, a 60-foot dock and a rooftop terrace facing the Miami skyline. Recently sold; similar residences may become available off-market.",
+  "features": [
+   "150 ft of bayfront",
+   "60 ft private dock",
+   "Rooftop terrace with skyline view",
+   "Wine room and cigar lounge",
+   "Resort-style pool and cabanas",
+   "Guarded island with 24-hour patrol"
+  ],
+  "scene": {
+   "kind": "coastal",
+   "seed": 12
+  }
+ },
+ {
+  "id": "peak-crest-villa",
+  "name": "Peak Crest Villa",
+  "city": "The Peak",
+  "region": "Hong Kong",
+  "country": "Hong Kong SAR",
+  "type": "Villa",
+  "price": 62000000,
+  "beds": 5,
+  "baths": 6,
+  "sqm": 540,
+  "land": "Private garden terrace",
+  "year": 2020,
+  "status": "Available",
+  "featured": false,
+  "tagline": "The harbour at your feet, from the top of the island.",
+  "desc": "A rare standalone villa on the upper slopes of The Peak with unobstructed views across Victoria Harbour. Five bedroom suites, a double-height living room and a garden terrace, with a car lift and four private parking spaces, a short drive from Central.",
+  "features": [
+   "Standalone villa with garden terrace",
+   "Unobstructed harbour views",
+   "Double-height living room",
+   "Residence car lift",
+   "Four private parking spaces",
+   "Staff suite and service entrance"
+  ],
+  "scene": {
+   "kind": "skyline",
+   "seed": 14
+  }
+ }
+];
+
+/* ---------- tiny helpers ---------- */
+function $(s, r) { return (r || document).querySelector(s); }
+function h(tag, props) {
+  var el = document.createElement(tag);
+  var p = props || {};
+  Object.keys(p).forEach(function (k) {
+    var v = p[k];
+    if (v == null || v === false) return;
+    if (k === 'class') el.className = v;
+    else if (k === 'text') el.textContent = v;
+    else if (k === 'html') el.innerHTML = v;
+    else if (k.slice(0, 2) === 'on') el.addEventListener(k.slice(2), v);
+    else el.setAttribute(k, v === true ? '' : v);
+  });
+  for (var i = 2; i < arguments.length; i++) {
+    var kids = [].concat(arguments[i]);
+    kids.forEach(function (kid) {
+      if (kid == null || kid === false) return;
+      el.append(kid.nodeType ? kid : document.createTextNode(String(kid)));
+    });
+  }
+  return el;
+}
+function slug(s) { return String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+function fmtUSD(n) {
+  if (!n) return 'Price on request';
+  if (n >= 1e6) { var m = n / 1e6; return '$' + (Math.round(m * 10) / 10) + 'M'; }
+  return '$' + n.toLocaleString('en-US');
+}
+function fmtFull(n) { return n ? 'USD ' + Number(n).toLocaleString('en-US') : 'Price on request'; }
+function sqft(m) { return Math.round(m * 10.7639).toLocaleString('en-US'); }
+function norm(l) {
+  var o = Object.assign({ status: 'Available', featured: false, features: [], beds: 0, baths: 0, sqm: 0, land: '', year: '', tagline: '', desc: '', city: '', region: '', country: '', type: 'Estate', price: 0 }, l);
+  o.scene = Object.assign({ kind: 'modern', seed: 1 }, l && l.scene);
+  o.price = Number(o.price) || 0; o.beds = Number(o.beds) || 0; o.baths = Number(o.baths) || 0; o.sqm = Number(o.sqm) || 0;
+  if (!Array.isArray(o.features)) o.features = [];
+  return o;
+}
+function estateArt(l, cls) {
+  if (l.image) return h('img', { src: l.image, alt: l.name || 'Estate photograph', class: cls || '' });
+  return h('div', { class: cls || '', html: scene(l.scene.kind, l.scene.seed) });
+}
+function copyText(text, onDone) {
+  function fallback() { onDone && onDone(false); }
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { onDone && onDone(true); }, fallback);
+    } else fallback();
+  } catch (e) { fallback(); }
+}
+
+/* ---------- illustrations ---------- */
+var uid = 0;
+var SKIES = [
+  { top: '#17202e', mid: '#50506f', hor: '#e0a272', sun: '#f6d7a4', far: '#2b3345', near: '#1a2230', ground: '#0e1513', bldg: '#111a1c', bldg2: '#18242a', edge: '#2d3d42', win: '#ffd98f', tree: '#0a1411', stars: false, snow: '#b9c4d3', sand: '#8e7b5a', roof: '#222c36' },
+  { top: '#060a11', mid: '#0f1828', hor: '#33496a', sun: '#e8eef7', far: '#121c2b', near: '#0b131e', ground: '#070d0d', bldg: '#0c1417', bldg2: '#121d22', edge: '#26363c', win: '#ffe0a0', tree: '#050c0b', stars: true, snow: '#8fa0b6', sand: '#4d4a3d', roof: '#18212b' },
+  { top: '#2b3552', mid: '#8b7b90', hor: '#f2c89b', sun: '#fff0d2', far: '#46506b', near: '#2c3550', ground: '#161a1d', bldg: '#1d2530', bldg2: '#27303c', edge: '#3d4856', win: '#ffe3a8', tree: '#12171b', stars: false, snow: '#d4dbe6', sand: '#a8926d', roof: '#2d3541' },
+  { top: '#13221d', mid: '#2f4a3f', hor: '#cba869', sun: '#f4e2b4', far: '#1f3a31', near: '#142a23', ground: '#0a1310', bldg: '#0f1a17', bldg2: '#16251f', edge: '#2c443a', win: '#ffd27a', tree: '#07110e', stars: false, snow: '#a9bcb0', sand: '#8a7650', roof: '#1c2d27' }
+];
+function rng(seed) {
+  var a = seed >>> 0;
+  return function () {
+    a |= 0; a = a + 0x6D2B79F5 | 0;
+    var t = Math.imul(a ^ a >>> 15, 1 | a);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+function tree(P, x, y, sc) {
+  return '<rect x="' + (x - 2 * sc) + '" y="' + (y - 18 * sc) + '" width="' + (4 * sc) + '" height="' + (18 * sc) + '" fill="' + P.tree + '"/>' +
+    '<ellipse cx="' + x + '" cy="' + (y - 30 * sc) + '" rx="' + (15 * sc) + '" ry="' + (26 * sc) + '" fill="' + P.tree + '"/>';
+}
+function pine(P, x, y, sc) {
+  var s = '';
+  for (var i = 0; i < 3; i++) {
+    var w = (26 - i * 6) * sc, top = y - (30 + i * 22) * sc;
+    s += '<polygon points="' + (x - w) + ',' + (y - i * 22 * sc) + ' ' + x + ',' + top + ' ' + (x + w) + ',' + (y - i * 22 * sc) + '" fill="' + P.tree + '"/>';
+  }
+  return s;
+}
+function palm(P, x, y, sc) {
+  var tx = x + 3 * sc, ty = y - 90 * sc;
+  var s = '<path d="M' + x + ' ' + y + ' Q' + (x + 8 * sc) + ' ' + (y - 50 * sc) + ' ' + tx + ' ' + ty + '" stroke="' + P.tree + '" stroke-width="' + (3 * sc) + '" fill="none"/>';
+  for (var i = 0; i < 6; i++) {
+    var a = (-160 + i * 64) * Math.PI / 180;
+    var ex = tx + Math.cos(a) * 42 * sc, ey = ty + Math.sin(a) * 22 * sc + 14 * sc;
+    s += '<path d="M' + tx + ' ' + ty + ' Q' + (tx + Math.cos(a) * 22 * sc).toFixed(1) + ' ' + (ty - 14 * sc) + ' ' + ex.toFixed(1) + ' ' + ey.toFixed(1) + '" stroke="' + P.tree + '" stroke-width="' + (2.4 * sc) + '" fill="none" stroke-linecap="round"/>';
+  }
+  return s;
+}
+function win(P, r, x, y, w, hh) {
+  return '<rect x="' + x.toFixed(0) + '" y="' + y.toFixed(0) + '" width="' + w.toFixed(0) + '" height="' + hh.toFixed(0) + '" fill="' + P.win + '" opacity="' + (0.55 + r() * 0.45).toFixed(2) + '"/>';
+}
+function scene(kind, seed) {
+  var id = 's' + (++uid);
+  seed = Number(seed) || 1;
+  var r = rng(seed * 7919 + String(kind).length * 131);
+  var P = SKIES[Math.abs(seed) % SKIES.length];
+  var W = 800, H = 500, s = '', i, x;
+  s += '<defs><linearGradient id="' + id + 'sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + P.top + '"/><stop offset=".55" stop-color="' + P.mid + '"/><stop offset="1" stop-color="' + P.hor + '"/></linearGradient>' +
+    '<radialGradient id="' + id + 'glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="' + P.sun + '" stop-opacity=".9"/><stop offset="1" stop-color="' + P.sun + '" stop-opacity="0"/></radialGradient>' +
+    '<linearGradient id="' + id + 'water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + P.hor + '" stop-opacity=".55"/><stop offset="1" stop-color="' + P.ground + '"/></linearGradient></defs>';
+  s += '<rect width="' + W + '" height="' + H + '" fill="url(#' + id + 'sky)"/>';
+  if (P.stars) for (i = 0; i < 46; i++) s += '<circle cx="' + (r() * W).toFixed(0) + '" cy="' + (r() * H * 0.45).toFixed(0) + '" r="' + (r() * 1.2 + 0.3).toFixed(1) + '" fill="#fff" opacity="' + (r() * 0.6 + 0.2).toFixed(2) + '"/>';
+  var sx = 140 + r() * 520, sy = 100 + r() * 70;
+  s += '<circle cx="' + sx.toFixed(0) + '" cy="' + sy.toFixed(0) + '" r="130" fill="url(#' + id + 'glow)"/><circle cx="' + sx.toFixed(0) + '" cy="' + sy.toFixed(0) + '" r="22" fill="' + P.sun + '"/>';
+  function reflect(hy) {
+    var o = '';
+    for (var k = 0; k < 9; k++) { var w = 44 + k * 16; o += '<rect x="' + (sx - w / 2).toFixed(0) + '" y="' + (hy + 10 + k * 14) + '" width="' + w + '" height="3" fill="' + P.sun + '" opacity="' + Math.max(0.08, 0.5 - k * 0.05).toFixed(2) + '"/>'; }
+    return o;
+  }
+  function waves(n) {
+    var o = '';
+    for (var k = 0; k < n; k++) o += '<path d="M' + (r() * 680).toFixed(0) + ' ' + (420 + k * 12) + ' q20 -6 40 0 t40 0" stroke="' + P.sun + '" stroke-width="1.2" fill="none" opacity=".25"/>';
+    return o;
+  }
+  if (kind === 'chateau') {
+    s += '<path d="M0 350 Q200 318 400 340 T800 336 V500H0Z" fill="' + P.far + '"/>';
+    s += '<rect y="408" width="800" height="92" fill="' + P.ground + '"/>';
+    s += '<rect x="110" y="340" width="150" height="70" fill="' + P.bldg + '"/><rect x="540" y="340" width="150" height="70" fill="' + P.bldg + '"/>';
+    s += '<polygon points="100,340 185,300 270,340" fill="' + P.roof + '"/><polygon points="530,340 615,300 700,340" fill="' + P.roof + '"/>';
+    s += '<rect x="250" y="292" width="300" height="118" fill="' + P.bldg2 + '"/>';
+    s += '<polygon points="236,292 270,236 530,236 564,292" fill="' + P.roof + '"/>';
+    s += '<rect x="228" y="250" width="44" height="160" fill="' + P.bldg + '"/><polygon points="220,250 250,188 280,250" fill="' + P.roof + '"/>';
+    s += '<rect x="528" y="250" width="44" height="160" fill="' + P.bldg + '"/><polygon points="520,250 550,188 580,250" fill="' + P.roof + '"/>';
+    s += '<rect x="330" y="214" width="14" height="26" fill="' + P.edge + '"/><rect x="456" y="214" width="14" height="26" fill="' + P.edge + '"/>';
+    for (i = 0; i < 6; i++) { s += win(P, r, 276 + i * 42, 306, 20, 32); s += win(P, r, 276 + i * 42, 352, 20, 34); }
+    [[140, 356], [200, 356], [560, 356], [620, 356]].forEach(function (p) { s += win(P, r, p[0], p[1], 18, 28); });
+    [[240, 270], [540, 270]].forEach(function (p) { s += win(P, r, p[0], p[1], 12, 22); });
+    s += '<rect x="388" y="372" width="24" height="38" fill="' + P.win + '" opacity=".9"/>';
+    s += '<polygon points="380,410 420,410 470,500 330,500" fill="' + P.hor + '" opacity=".25"/>';
+    [70, 320, 480, 730].forEach(function (tx, k) { s += tree(P, tx, 416 + (k % 2) * 8, 0.9 + r() * 0.5); });
+  } else if (kind === 'skyline') {
+    s += '<rect y="430" width="800" height="70" fill="' + P.ground + '"/>';
+    x = -10;
+    while (x < 810) { var w1 = 34 + r() * 40, h1 = 120 + r() * 190; s += '<rect x="' + x.toFixed(0) + '" y="' + (430 - h1).toFixed(0) + '" width="' + w1.toFixed(0) + '" height="' + h1.toFixed(0) + '" fill="' + P.far + '"/>'; x += w1 + 2; }
+    x = -20;
+    while (x < 820) {
+      var w2 = 40 + r() * 50, h2 = 90 + r() * 170, y0 = 430 - h2;
+      s += '<rect x="' + x.toFixed(0) + '" y="' + y0.toFixed(0) + '" width="' + w2.toFixed(0) + '" height="' + h2.toFixed(0) + '" fill="' + P.near + '"/>';
+      for (var yy = y0 + 10; yy < 420; yy += 16) for (var xx = x + 6; xx < x + w2 - 8; xx += 12) if (r() > 0.55) s += '<rect x="' + xx.toFixed(0) + '" y="' + yy.toFixed(0) + '" width="4" height="6" fill="' + P.win + '" opacity="' + (0.4 + r() * 0.6).toFixed(2) + '"/>';
+      x += w2 + 4;
+    }
+    var tx = 330 + Math.round(r() * 40);
+    s += '<rect x="' + tx + '" y="96" width="120" height="344" fill="' + P.bldg2 + '"/><rect x="' + (tx + 8) + '" y="84" width="104" height="14" fill="' + P.edge + '"/><rect x="' + (tx + 50) + '" y="52" width="20" height="34" fill="' + P.edge + '"/>';
+    for (var y3 = 144; y3 < 420; y3 += 18) for (var x3 = tx + 10; x3 < tx + 110; x3 += 16) if (r() > 0.3) s += '<rect x="' + x3 + '" y="' + y3 + '" width="9" height="11" fill="' + P.win + '" opacity="' + (0.5 + r() * 0.5).toFixed(2) + '"/>';
+    s += '<rect x="' + (tx + 6) + '" y="102" width="108" height="34" fill="' + P.win + '" opacity=".85"/>';
+    [40, 150, 690, 770].forEach(function (px) { s += tree(P, px, 446, 0.8 + r() * 0.4); });
+  } else if (kind === 'island') {
+    var hy = 292;
+    s += '<rect y="' + hy + '" width="800" height="' + (500 - hy) + '" fill="url(#' + id + 'water)"/>';
+    s += reflect(hy);
+    s += '<path d="M0 ' + hy + ' H800" stroke="' + P.hor + '" stroke-width="1" opacity=".5"/>';
+    s += '<path d="M560 ' + hy + ' Q620 ' + (hy - 34) + ' 700 ' + (hy - 8) + ' Q740 ' + (hy - 18) + ' 800 ' + hy + ' Z" fill="' + P.far + '"/>';
+    s += '<path d="M130 ' + (hy + 66) + ' Q170 ' + (hy - 6) + ' 300 ' + (hy + 4) + ' Q420 ' + (hy - 12) + ' 520 ' + (hy + 28) + ' Q560 ' + (hy + 60) + ' 520 ' + (hy + 70) + ' Z" fill="' + P.bldg + '"/>';
+    s += '<rect x="290" y="' + (hy - 20) + '" width="120" height="24" fill="' + P.bldg2 + '"/><rect x="280" y="' + (hy - 26) + '" width="140" height="6" fill="' + P.edge + '"/>';
+    for (i = 0; i < 5; i++) s += win(P, r, 298 + i * 22, hy - 16, 16, 14);
+    s += palm(P, 200, hy + 20, 0.9) + palm(P, 250, hy + 10, 1.1) + palm(P, 460, hy + 12, 1) + palm(P, 500, hy + 30, 0.8);
+    s += waves(6);
+  } else if (kind === 'chalet') {
+    s += '<polygon points="-20,380 130,170 280,380" fill="' + P.far + '"/><polygon points="130,170 104,212 128,204 152,218" fill="' + P.snow + '" opacity=".85"/>';
+    s += '<polygon points="200,380 380,126 560,380" fill="' + P.far + '"/><polygon points="380,126 344,184 376,176 404,192 424,178" fill="' + P.snow + '" opacity=".9"/>';
+    s += '<polygon points="470,380 640,190 810,380" fill="' + P.near + '"/><polygon points="640,190 612,228 636,222 662,232" fill="' + P.snow + '" opacity=".85"/>';
+    s += '<path d="M0 392 Q200 372 420 388 T800 380 V500H0Z" fill="' + P.snow + '" opacity=".92"/>';
+    s += '<rect y="440" width="800" height="60" fill="' + P.snow + '"/>';
+    s += '<rect x="300" y="334" width="200" height="82" fill="' + P.bldg + '"/>';
+    s += '<polygon points="278,340 400,258 522,340" fill="' + P.roof + '"/><polygon points="278,340 400,258 522,340 512,340 400,268 288,340" fill="' + P.snow + '" opacity=".8"/>';
+    s += '<rect x="440" y="262" width="16" height="34" fill="' + P.edge + '"/>';
+    s += '<polygon points="380,326 400,292 420,326" fill="' + P.win + '" opacity=".9"/>';
+    for (i = 0; i < 4; i++) s += win(P, r, 316 + i * 44, 350, 28, 34);
+    s += '<rect x="384" y="378" width="32" height="38" fill="' + P.win + '" opacity=".9"/>';
+    [60, 120, 230, 590, 690, 750].forEach(function (px, k) { s += pine(P, px, 430 + (k % 3) * 12, 0.9 + r() * 0.5); });
+  } else if (kind === 'coastal') {
+    var hc = 286;
+    s += '<rect y="' + hc + '" width="800" height="214" fill="url(#' + id + 'water)"/>';
+    s += reflect(hc);
+    s += '<path d="M0 ' + hc + ' H800" stroke="' + P.hor + '" stroke-width="1" opacity=".5"/>';
+    s += '<path d="M0 440 Q240 404 520 428 T800 412 V500H0Z" fill="' + P.sand + '"/>';
+    s += '<rect x="90" y="346" width="300" height="70" fill="' + P.bldg + '"/><rect x="120" y="304" width="220" height="42" fill="' + P.bldg2 + '"/>';
+    s += '<rect x="104" y="298" width="252" height="7" fill="' + P.edge + '"/><rect x="76" y="340" width="330" height="7" fill="' + P.edge + '"/>';
+    for (i = 0; i < 4; i++) s += win(P, r, 132 + i * 52, 312, 40, 26);
+    for (i = 0; i < 5; i++) s += win(P, r, 102 + i * 58, 354, 46, 54);
+    for (i = 0; i < 7; i++) s += '<rect x="' + (80 + i * 48) + '" y="340" width="2" height="22" fill="' + P.edge + '"/>';
+    s += palm(P, 470, 440, 1.1) + palm(P, 520, 428, 0.9) + palm(P, 690, 436, 1.2);
+    s += waves(5);
+  } else {
+    s += '<path d="M0 340 Q140 292 300 322 T620 306 T800 326 V500H0Z" fill="' + P.far + '"/>';
+    s += '<path d="M0 380 Q220 340 430 366 T800 356 V500H0Z" fill="' + P.near + '"/>';
+    s += '<rect y="402" width="800" height="98" fill="' + P.ground + '"/>';
+    var x0 = 170 + Math.round(r() * 50);
+    s += '<rect x="' + x0 + '" y="342" width="430" height="60" fill="' + P.bldg + '"/>';
+    s += '<rect x="' + (x0 - 46) + '" y="300" width="380" height="42" fill="' + P.bldg2 + '"/>';
+    s += '<rect x="' + (x0 - 58) + '" y="293" width="404" height="8" fill="' + P.edge + '"/>';
+    s += '<rect x="' + (x0 - 6) + '" y="397" width="442" height="6" fill="' + P.edge + '"/>';
+    for (i = 0; i < 6; i++) s += win(P, r, x0 - 30 + i * 60, 308, 52, 26);
+    for (i = 0; i < 7; i++) s += win(P, r, x0 + 14 + i * 58, 350, 46, 40);
+    s += '<rect x="' + (x0 - 20) + '" y="418" width="470" height="52" fill="' + P.hor + '" opacity=".4"/>';
+    for (i = 0; i < 5; i++) s += '<rect x="' + (x0 - 10 + i * 92) + '" y="424" width="' + ((40 + r() * 30) | 0) + '" height="3" fill="' + P.win + '" opacity=".35"/>';
+    [60, 130, x0 + 470, x0 + 540, 730].forEach(function (px, k) { if (px > 0 && px < 790) s += tree(P, px, 404 + (k % 2) * 10, 0.8 + r() * 0.5); });
+  }
+  return '<svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">' + s + '</svg>';
+}
+
+/* ---------- state ---------- */
+var S = {
+  all: DEFAULTS.map(norm), fromDb: false, db: null, sample: null, canEdit: false, uid: null,
+  inquiries: [], istate: {}, f: { type: 'All', q: '', max: 0, sort: 'featured' },
+  adminTab: 'listings', adminMsg: '', importing: false,
+  chat: { turns: [], busy: false, useLocal: false, started: false }
+};
+var unsubInq = null, unsubState = null;
+
+function byId(id) { return S.all.filter(function (l) { return l.id === id; })[0]; }
+function active() { return S.all.filter(function (l) { return l.status !== 'Sold'; }); }
+
+/* ---------- hero ---------- */
+function renderHero() {
+  var feats = S.all.filter(function (l) { return l.featured && l.status !== 'Sold'; });
+  var l = feats[0] || active()[0] || S.all[0];
+  var fig = $('#heroArt');
+  fig.replaceChildren();
+  if (!l) return;
+  fig.append(estateArt(l, 'art'));
+  fig.append(h('button', { class: 'arch-cap', type: 'button', onclick: function () { openDetail(l.id); }, 'aria-label': 'View ' + l.name },
+    h('small', { text: 'Featured residence' }),
+    h('strong', { text: l.name }),
+    h('span', { text: l.city + ', ' + l.country + '  ·  ' + fmtUSD(l.price) })));
+}
+
+/* ---------- collection ---------- */
+function visible() {
+  var q = S.f.q.trim().toLowerCase();
+  var a = S.all.filter(function (l) {
+    if (S.f.type !== 'All' && l.type !== S.f.type) return false;
+    if (S.f.max && l.price > S.f.max) return false;
+    if (q) {
+      var hay = [l.name, l.city, l.region, l.country, l.type].join(' ').toLowerCase();
+      if (hay.indexOf(q) < 0) return false;
+    }
+    return true;
+  });
+  a.sort(function (x, y) {
+    if (S.f.sort === 'high') return y.price - x.price;
+    if (S.f.sort === 'low') return x.price - y.price;
+    if (x.featured !== y.featured) return x.featured ? -1 : 1;
+    return y.price - x.price;
+  });
+  return a;
+}
+function renderChips() {
+  var types = ['All'];
+  S.all.forEach(function (l) { if (l.type && types.indexOf(l.type) < 0) types.push(l.type); });
+  if (types.indexOf(S.f.type) < 0) S.f.type = 'All';
+  var box = $('#typeChips');
+  box.replaceChildren.apply(box, types.map(function (t) {
+    return h('button', { class: 'chip', type: 'button', 'aria-pressed': String(S.f.type === t), text: t, onclick: function () { S.f.type = t; renderChips(); renderGrid(); } });
+  }));
+}
+function card(l) {
+  var statusClass = l.status === 'Under Offer' ? 'under-offer' : (l.status === 'Sold' ? 'sold' : '');
+  return h('article', { class: 'card' },
+    h('span', { class: 'badge ' + statusClass, text: l.status }),
+    l.featured && l.status !== 'Sold' ? h('span', { class: 'badge star', text: 'Featured' }) : null,
+    estateArt(l, 'art'),
+    h('div', { class: 'card-body' },
+      h('span', { class: 'kind', text: l.type }),
+      h('h3', null, h('button', { type: 'button', text: l.name, onclick: function () { openDetail(l.id); } })),
+      h('p', { class: 'loc', text: l.city + (l.region ? ', ' + l.region : '') + ' · ' + l.country }),
+      h('p', { class: 'price', text: fmtUSD(l.price) }),
+      h('div', { class: 'specs' },
+        l.beds ? h('span', { text: l.beds + ' bedrooms' }) : null,
+        l.baths ? h('span', { text: l.baths + ' baths' }) : null,
+        l.sqm ? h('span', { text: l.sqm.toLocaleString('en-US') + ' m²' }) : null)));
+}
+function renderGrid() {
+  var list = visible();
+  var grid = $('#grid');
+  $('#count').textContent = list.length + (list.length === 1 ? ' residence' : ' residences');
+  if (!list.length) {
+    grid.replaceChildren(h('div', { class: 'empty', style: 'grid-column:1/-1' },
+      h('h3', { text: 'Nothing matches these filters' }),
+      h('p', { text: 'Clear the filters to see the whole collection, or ask our concierge about off-market residences.' }),
+      h('button', { class: 'btn ghost sm', type: 'button', text: 'Clear filters', onclick: function () { S.f = { type: 'All', q: '', max: 0, sort: 'featured' }; $('#fSearch').value = ''; $('#fMax').value = '0'; $('#fSort').value = 'featured'; renderChips(); renderGrid(); } })));
+    return;
+  }
+  grid.replaceChildren.apply(grid, list.map(card));
+}
+function renderAll() { renderHero(); renderChips(); renderGrid(); }
+
+/* ---------- inquiry form + sending ---------- */
+function setStatus(el, msg, kind) { el.className = 'form-status' + (kind ? ' ' + kind : ''); el.textContent = msg; }
+async function sendInquiry(item) {
+  if (!S.db || !S.uid) return { ok: false };
+  try {
+    var ref = S.db.doc('inquiries/' + S.uid);
+    var snap = await ref.get();
+    var prev = (snap.exists && snap.data().items) || [];
+    var entry = Object.assign({}, item, { id: 'q' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6), createdAt: new Date().toISOString() });
+    await ref.set({ items: prev.concat([entry]).slice(-60) });
+    return { ok: true };
+  } catch (e) { return { ok: false, code: e && e.code }; }
+}
+function inquiryForm(opts) {
+  var p = opts.prefix;
+  var name = h('input', { id: p + '-name', name: 'name', autocomplete: 'name' });
+  var email = h('input', { id: p + '-email', name: 'email', type: 'email', autocomplete: 'email' });
+  var phone = h('input', { id: p + '-phone', name: 'phone', type: 'tel', autocomplete: 'tel' });
+  var budget = h('select', { id: p + '-budget' }, ['Budget (optional)', 'Under $10M', '$10M to $25M', '$25M to $50M', 'Above $50M'].map(function (t, i) { return h('option', { value: i ? t : '', text: t }); }));
+  var msg = h('textarea', { id: p + '-msg', rows: '4', placeholder: opts.placeholder || 'Tell us what you are looking for.' });
+  var status = h('p', { class: 'form-status', role: 'status', 'aria-live': 'polite' });
+  var btn = h('button', { class: 'btn', type: 'submit', text: opts.cta || 'Send inquiry' });
+  var f = h('form', { class: 'iform', novalidate: true },
+    h('div', { class: 'row' }, fld('Name', name), fld('Email', email)),
+    h('div', { class: 'row' }, fld('Phone (optional)', phone), fld('Budget', budget)),
+    fld('Message', msg), h('div', null, btn), status);
+  function fld(label, input) { return h('label', { class: 'fld' }, h('span', { text: label }), input); }
+  f.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    var data = { name: name.value.trim(), email: email.value.trim(), phone: phone.value.trim(), budget: budget.value, message: msg.value.trim() };
+    if (!data.name) { setStatus(status, 'Please enter your name.', 'err'); name.focus(); return; }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email)) { setStatus(status, 'Please enter a valid email address so we can reply.', 'err'); email.focus(); return; }
+    btn.disabled = true; setStatus(status, 'Sending…', '');
+    var res = await sendInquiry(Object.assign({ listingId: opts.listingId || '', listingName: opts.listingName || '' }, data));
+    btn.disabled = false;
+    if (res.ok) {
+      f.reset();
+      setStatus(status, 'Thank you. Your inquiry has reached our private office.', 'ok');
+    } else {
+      setStatus(status, 'This view cannot deliver the inquiry. Please email ' + CONTACT_EMAIL + (opts.listingName ? ' and mention ' + opts.listingName : '') + '. ', 'err');
+      status.append(h('button', { class: 'link-btn', type: 'button', text: 'Copy address', onclick: function (ev) {
+        var b = ev.currentTarget; copyText(CONTACT_EMAIL, function (ok) { b.textContent = ok ? 'Copied' : 'Select and copy it above'; });
+      } }));
+    }
+  });
+  return f;
+}
+
+/* ---------- detail dialog ---------- */
+function openDetail(id) {
+  var l = byId(id); if (!l) return;
+  var dlg = $('#detail'), body = $('#detailBody');
+  var statusClass = l.status === 'Under Offer' ? 'under-offer' : (l.status === 'Sold' ? 'sold' : '');
+  var art = h('div', { class: 'arch' }, h('span', { class: 'badge ' + statusClass, style: 'left:50%;transform:translateX(-50%);top:26px', text: l.status }), estateArt(l, 'art'));
+  var facts = h('dl', { class: 'facts' },
+    l.beds ? h('div', null, h('dt', { text: 'Bedrooms' }), h('dd', { text: String(l.beds) })) : null,
+    l.baths ? h('div', null, h('dt', { text: 'Bathrooms' }), h('dd', { text: String(l.baths) })) : null,
+    l.sqm ? h('div', null, h('dt', { text: 'Interior' }), h('dd', { text: l.sqm.toLocaleString('en-US') + ' m²' }, h('small', { text: sqft(l.sqm) + ' sq ft' }))) : null,
+    l.land ? h('div', null, h('dt', { text: 'Land' }), h('dd', { text: l.land })) : null,
+    l.year ? h('div', null, h('dt', { text: 'Built' }), h('dd', { text: String(l.year) })) : null);
+  var enquire;
+  if (l.status === 'Sold') {
+    enquire = h('div', { class: 'sold-note' },
+      h('p', { text: 'This residence has sold. We often hold similar homes that are not publicly listed.' }),
+      h('button', { class: 'btn ghost sm', type: 'button', text: 'Ask about similar residences', onclick: function () { dlg.close(); openChat('Do you have anything similar to ' + l.name + ' off-market?'); } }));
+  } else {
+    enquire = h('div', { style: 'display:grid;gap:14px' }, h('h4', { text: l.status === 'Under Offer' ? 'Register interest' : 'Request a private viewing' }),
+      inquiryForm({ prefix: 'dq', listingId: l.id, listingName: l.name, cta: 'Send request', placeholder: 'Preferred dates, who will attend, and anything we should prepare.' }));
+  }
+  body.replaceChildren(h('div', { class: 'detail' },
+    h('div', { class: 'detail-side' }, art),
+    h('div', { class: 'detail-main' },
+      h('div', { style: 'display:grid;gap:8px' }, h('span', { class: 'kind', text: l.type }), h('h2', { text: l.name }),
+        h('p', { class: 'loc', text: [l.city, l.region, l.country].filter(Boolean).join(', ') })),
+      h('p', { class: 'detail-price', text: fmtFull(l.price) }),
+      l.tagline ? h('p', { style: 'font:italic 400 1.2rem/1.4 var(--display)' }, l.tagline) : null,
+      facts,
+      l.desc ? h('p', { class: 'muted', style: 'font-weight:300' }, l.desc) : null,
+      l.features.length ? h('div', { style: 'display:grid;gap:12px' }, h('h4', { text: 'Highlights' }), h('ul', { class: 'feat' }, l.features.map(function (t) { return h('li', { text: t }); }))) : null,
+      enquire)));
+  dlg.showModal();
+  dlg.scrollTop = 0;
+}
+
+/* ---------- chat ---------- */
+var STOP = ['the','and','for','with','that','this','have','some','show','find','looking','want','need','please','under','over','than','below','above','about','from','what','which','where','your','you','any','are','can','could','would','like','near','best','good','home','homes','house','houses','property','properties','estate','estates','residence','residences','luxury','million','bedroom','bedrooms','beds','budget','around','interested','something','anything','there','tell','more','does','have'];
+var SYN = { waterfront: 'beachfront lakefront bayfront berth marina beach', beachfront: 'waterfront beach', beach: 'beachfront', sea: 'beachfront waterfront', ocean: 'beachfront waterfront', lake: 'lake como', ski: 'chalet', mountain: 'chalet', mountains: 'chalet', snow: 'chalet', castle: 'château', chateau: 'château', city: 'penthouse skyline', apartment: 'penthouse', flat: 'penthouse', yacht: 'berth marina waterfront', boat: 'berth marina', tropical: 'island beachfront', asia: 'singapore hong kong philippines makati', europe: 'france italy united kingdom london', america: 'united states', usa: 'united states', us: 'united states', uae: 'dubai emirates' };
+function chatRules() {
+  var lines = S.all.slice(0, 40).map(function (l) {
+    return [l.id, l.name, [l.city, l.region, l.country].filter(Boolean).join(', '), l.type, fmtUSD(l.price), l.beds + ' bed', l.baths + ' bath', l.sqm + ' m2', l.status, l.tagline, l.features.slice(0, 4).join('; ')].join(' | ');
+  }).join('\n');
+  return 'You are the private concierge for Aurelian Private Estates, a luxury real estate house. Speak with calm, polished warmth. Keep every reply under 110 words and write plain text with no markdown. ' +
+    'Only discuss the properties in the PORTFOLIO below and never invent properties, prices or details. When you recommend a property, put its id in double square brackets, for example [[sunset-ridge-residence]], right after its name. Recommend at most three at a time. ' +
+    'Prices are asking prices in US dollars. A property marked Sold cannot be offered, but you may say similar homes sometimes come off-market. A property marked Under Offer can still be registered for interest. ' +
+    'You do not give legal, tax or financial advice; suggest speaking to the buyer\'s own advisers. When someone wants a viewing or more detail, invite them to open the residence and send a request, or to email ' + CONTACT_EMAIL + '. If a question is unrelated to real estate or this portfolio, steer back politely.\n\nPORTFOLIO (id | name | place | type | price | beds | baths | area | status | tagline | highlights):\n' + lines;
+}
+function parseCrit(t) {
+  var max = 0, min = 0, beds = 0;
+  var m = t.match(/(\d+(?:\.\d+)?)\s*(?:m\b|mn\b|million)/);
+  if (m) { var v = parseFloat(m[1]) * 1e6; if (/\b(over|above|more than|at least|from)\b/.test(t)) min = v; else max = v; }
+  var b = t.match(/(\d+)\s*\+?\s*(?:bed|br\b|bedroom)/);
+  if (b) beds = parseInt(b[1], 10);
+  var words = (t.match(/[a-zà-ÿ]+/g) || []).filter(function (w) { return w.length > 2 && STOP.indexOf(w) < 0; });
+  var extra = [];
+  words.forEach(function (w) { if (SYN[w]) extra = extra.concat(SYN[w].split(' ')); });
+  return { max: max, min: min, beds: beds, words: words.concat(extra) };
+}
+function localReply(text) {
+  var t = text.toLowerCase();
+  if (/^\s*(hi|hello|hey|good (morning|afternoon|evening))\b/.test(t)) return { text: 'Good day, and welcome to Aurelian. Tell me a region, a style such as waterfront or alpine, a budget or a number of bedrooms, and I will suggest residences from the collection.', refs: [] };
+  if (/\b(view|viewing|visit|tour|appointment|schedule|see it)\b/.test(t)) return { text: 'Private viewings are arranged by our office, including transfers by car, helicopter or yacht where a property calls for it. Open the residence you like and send a request with your preferred dates, or email ' + CONTACT_EMAIL + '.', refs: [] };
+  if (/off.?market|private sale|not listed|quiet(ly)?|confidential|discreet/.test(t)) return { text: 'Several of our homes are shown only to qualified principals. Share your brief with our private office and we will make quiet inquiries on your behalf. You can send it through the contact form below the collection.', refs: [] };
+  if (/\b(fee|fees|commission|cost of service|legal|tax|mortgage|finance|financing)\b/.test(t)) return { text: 'We do not give legal, tax or financial advice. We work alongside your own lawyers, tax advisers and family office on due diligence and structuring. Our private office can discuss how we would support your purchase.', refs: [] };
+  if (/\b(thanks|thank you|cheers)\b/.test(t)) return { text: 'It is a pleasure. Ask me anything else about the collection whenever you like.', refs: [] };
+  var c = parseCrit(t);
+  var pool = S.all.filter(function (l) { return l.status !== 'Sold'; });
+  var filtered = pool.filter(function (l) { return (!c.max || l.price <= c.max) && (!c.min || l.price >= c.min) && (!c.beds || l.beds >= c.beds); });
+  if (!c.words.length && !c.max && !c.min && !c.beds) {
+    return { text: 'Tell me what you have in mind: a region, a style such as waterfront, alpine or penthouse, a budget, or the number of bedrooms. Here are two residences to begin with.', refs: pool.filter(function (l) { return l.featured; }).slice(0, 2).map(function (l) { return l.id; }) };
+  }
+  var scored = filtered.map(function (l) {
+    var hay = [l.name, l.city, l.region, l.country, l.type, l.tagline, l.features.join(' '), l.desc].join(' ').toLowerCase();
+    var sc = 0; c.words.forEach(function (w) { var base = w.replace(/s$/, ''); if (hay.indexOf(w) >= 0 || (base.length > 2 && hay.indexOf(base) >= 0)) sc++; });
+    return { l: l, sc: sc, rank: sc + (l.status === 'Available' ? 0.5 : 0) };
+  });
+  var hits = scored.filter(function (x) { return x.sc > 0; }).sort(function (a, b) { return b.rank - a.rank || b.l.price - a.l.price; });
+  var onlyNumeric = !c.words.length;
+  if (onlyNumeric) hits = scored.sort(function (a, b) { return b.l.price - a.l.price; });
+  if (hits.length) {
+    var top = hits.slice(0, 3);
+    return { text: top.length === 1 ? 'One residence fits that brief closely.' : 'These ' + top.length + ' residences fit that brief best.', refs: top.map(function (x) { return x.l.id; }) };
+  }
+  var alt = (filtered.length ? filtered : pool).slice().sort(function (a, b) { return (b.featured ? 1 : 0) - (a.featured ? 1 : 0); }).slice(0, 2);
+  return { text: 'I do not have an exact match for that in the public collection, but our private office may know of something off-market. In the meantime, these may interest you.', refs: alt.map(function (l) { return l.id; }) };
+}
+function stripRefs(t) { return t.replace(/\s*\[\[[^\]]*\]?\]?/g, '').replace(/\s*\[\[[^\]]*$/, '').trim(); }
+function extractRefs(t) {
+  var out = [], re = /\[\[([a-z0-9\-]+)\]\]/g, m;
+  while ((m = re.exec(t))) if (byId(m[1]) && out.indexOf(m[1]) < 0) out.push(m[1]);
+  return out.slice(0, 3);
+}
+function logScroll() { var l = $('#chatLog'); l.scrollTop = l.scrollHeight; }
+function addMsg(kind, text) { var m = h('div', { class: 'msg ' + kind, text: text }); $('#chatLog').append(m); logScroll(); return m; }
+function addChips(refs) {
+  if (!refs.length) return;
+  $('#chatLog').append(h('div', { class: 'mchips' }, refs.map(function (id) {
+    var l = byId(id);
+    return h('button', { class: 'mchip', type: 'button', text: l.name + '  ·  ' + fmtUSD(l.price), onclick: function () { openDetail(id); } });
+  })));
+  logScroll();
+}
+function startChat() {
+  if (S.chat.started) return;
+  S.chat.started = true;
+  addMsg('bot', 'Good day. I am the Aurelian concierge. Ask me about a region, a style, a budget or a particular residence, and I will help you find where to look.');
+  var sugg = ['Waterfront under $30M', 'Something alpine for winter', 'Penthouse with city views', 'How do viewings work?'];
+  $('#chatSugg').replaceChildren.apply($('#chatSugg'), sugg.map(function (t) { return h('button', { class: 'mchip', type: 'button', text: t, onclick: function () { sendChat(t); } }); }));
+}
+function openChat(prefill) {
+  var panel = $('#chat'), fab = $('#chatFab');
+  panel.hidden = false; fab.setAttribute('aria-expanded', 'true');
+  startChat();
+  if (prefill) sendChat(prefill); else $('#chatInput').focus();
+}
+function closeChat() { $('#chat').hidden = true; $('#chatFab').setAttribute('aria-expanded', 'false'); }
+async function sendChat(text) {
+  text = String(text || '').trim();
+  if (!text || S.chat.busy) return;
+  $('#chatSugg').replaceChildren();
+  addMsg('me', text);
+  S.chat.turns.push({ role: 'user', content: text });
+  S.chat.busy = true; $('#chatSend').disabled = true;
+  var bubble = addMsg('bot pending', 'Thinking…');
+  var reply = null, refs = [];
+  if (S.sample && !S.chat.useLocal) {
+    try {
+      var input = [{ role: 'user', content: chatRules() }].concat(S.chat.turns.slice(-10));
+      var res = await S.sample(input, { cache: false, modelTier: 'quick', onText: function (u) { bubble.classList.remove('pending'); bubble.textContent = stripRefs(u.text); logScroll(); } });
+      reply = res.text; refs = extractRefs(reply); reply = stripRefs(reply);
+    } catch (e) {
+      var code = e && e.code;
+      if (['not_granted', 'sampling_disabled', 'not_declared', 'capability_disabled', 'capability_removed'].indexOf(code) >= 0) S.chat.useLocal = true;
+      if (e && e.text && code !== 'refused') { reply = stripRefs(e.text); refs = extractRefs(e.text); }
+    }
+  }
+  if (!reply) { var lr = localReply(text); reply = lr.text; refs = lr.refs; }
+  bubble.classList.remove('pending'); bubble.textContent = reply;
+  S.chat.turns.push({ role: 'assistant', content: reply });
+  addChips(refs);
+  S.chat.busy = false; $('#chatSend').disabled = false; $('#chatInput').focus();
+}
+
+/* ---------- admin ---------- */
+function setAdminMsg(msg, kind) { S.adminMsg = msg; var el = $('#adminMsg'); if (el) { el.className = 'form-status' + (kind ? ' ' + kind : ''); el.textContent = msg; } }
+function openAdmin() {
+  var dlg = $('#admin');
+  if (!dlg.open) dlg.showModal();
+  renderAdmin();
+  if (location.hash !== '#admin') { try { history.replaceState(null, '', '#admin'); } catch (e) { location.hash = 'admin'; } }
+}
+function renderAdmin() {
+  var body = $('#adminBody');
+  if (!adminUnlocked) {
+    var pass = h('input', { type: 'password', placeholder: 'Enter admin password', autocomplete: 'current-password' });
+    var msg = h('p', { class: 'form-status err' });
+    var form = h('form', { class: 'iform', style: 'width:min(360px,100%)' },
+      h('label', { class: 'fld' }, h('span', { text: 'Password' }), pass),
+      h('button', { class: 'btn', type: 'submit', text: 'Unlock admin' }), msg);
+    form.addEventListener('submit', function(e) { e.preventDefault(); if (pass.value === ADMIN_PASSWORD) { adminUnlocked = true; renderAdmin(); } else { msg.textContent = 'Incorrect password.'; pass.value = ''; pass.focus(); } });
+    body.replaceChildren(h('div', { class: 'lock' }, h('h2', { text: 'Admin access' }), h('p', { text: 'Enter the administrator password to manage estate listings and photos.' }), form));
+    return;
+  }
+  var newCount = S.inquiries.filter(function (q) { return (S.istate[q.id] || {}).status !== 'handled' && (S.istate[q.id] || {}).status !== 'archived'; }).length;
+  var tabs = h('div', { class: 'tabs', role: 'tablist' },
+    h('button', { class: 'tab', role: 'tab', type: 'button', 'aria-selected': String(S.adminTab === 'listings'), text: 'Listings (' + S.all.length + ')', onclick: function () { S.adminTab = 'listings'; renderAdmin(); } }),
+    h('button', { class: 'tab', role: 'tab', type: 'button', 'aria-selected': String(S.adminTab === 'inquiries'), text: 'Inquiries (' + newCount + ' open)', onclick: function () { S.adminTab = 'inquiries'; renderAdmin(); } }));
+  var kids = [h('div', { class: 'adm-top' }, h('div', null, h('p', { class: 'eyebrow', text: 'Private office' }), h('h2', { text: 'Admin' }))), tabs];
+  var msg = h('p', { class: 'form-status', id: 'adminMsg', role: 'status', 'aria-live': 'polite' }); msg.textContent = S.adminMsg || '';
+  if (S.adminTab === 'listings') kids.push(adminListings(msg)); else kids.push(adminInquiries(msg));
+  kids.push(msg);
+  body.replaceChildren(h('div', { class: 'adm' }, kids));
+}
+function adminListings(msg) {
+  var out = h('div', { style: 'display:grid;gap:16px' });
+  var canWrite = adminUnlocked && !!S.db && S.fromDb;
+  if (!S.db) {
+    out.append(h('div', { class: 'notice' }, h('span', { text: 'The database is not reachable from this view, so changes cannot be saved. Reload the page, or open it while signed in as the owner.' })));
+  } else if (!S.fromDb) {
+    out.append(h('div', { class: 'notice' },
+      h('span', { text: 'The site is showing its built-in sample portfolio. Import it once to start editing, adding and removing listings.' }),
+      h('button', { class: 'btn sm', type: 'button', disabled: S.importing, text: S.importing ? 'Importing…' : 'Import sample portfolio', onclick: importSample })));
+  }
+  out.append(h('div', { class: 'adm-bar' }, h('button', { class: 'btn sm', type: 'button', disabled: !canWrite, text: 'Add listing', onclick: function () { openListingForm(null); } })));
+  var rows = S.all.slice().sort(function (a, b) { return a.name.localeCompare(b.name); }).map(function (l) {
+    var sel = h('select', { class: 'fld-inline', 'aria-label': 'Status of ' + l.name, disabled: !canWrite, onchange: function (e) { updateListing(l.id, { status: e.target.value }, l.name + ' is now ' + e.target.value + '.'); } },
+      ['Available', 'Under Offer', 'Sold'].map(function (s) { return h('option', { value: s, text: s, selected: s === l.status }); }));
+    var feat = h('input', { type: 'checkbox', 'aria-label': 'Feature ' + l.name, checked: l.featured, disabled: !canWrite, onchange: function (e) { updateListing(l.id, { featured: e.target.checked }, l.name + (e.target.checked ? ' is featured.' : ' is no longer featured.')); } });
+    var del = h('button', { class: 'btn danger sm', type: 'button', disabled: !canWrite, text: 'Delete' });
+    var armed = false, timer = null;
+    del.addEventListener('click', function () {
+      if (!armed) { armed = true; del.textContent = 'Confirm delete'; timer = setTimeout(function () { armed = false; del.textContent = 'Delete'; }, 4000); return; }
+      clearTimeout(timer); removeListing(l);
+    });
+    return h('tr', null,
+      h('td', null, h('div', { class: 'nm', text: l.name }), h('div', { class: 'muted', style: 'font-size:.8rem', text: l.city + ', ' + l.country })),
+      h('td', { text: l.type }),
+      h('td', { class: 'num', text: fmtUSD(l.price) }),
+      h('td', null, sel),
+      h('td', null, feat),
+      h('td', null, h('div', { class: 'acts' }, h('button', { class: 'btn ghost sm', type: 'button', disabled: !canWrite, text: 'Edit', onclick: function () { openListingForm(l); } }), del)));
+  });
+  out.append(h('div', { class: 'tbl-wrap' }, h('table', { class: 'tbl' },
+    h('thead', null, h('tr', null, ['Residence', 'Type', 'Price', 'Status', 'Featured', ''].map(function (t) { return h('th', { text: t }); }))),
+    h('tbody', null, rows))));
+  return out;
+}
+async function importSample() {
+  if (!S.db || S.importing) return;
+  S.importing = true; renderAdmin(); setAdminMsg('Importing the sample portfolio…', '');
+  try {
+    for (var i = 0; i < DEFAULTS.length; i++) await S.db.collection('listings').doc(DEFAULTS[i].id).set(DEFAULTS[i]);
+    setAdminMsg('Sample portfolio imported. You can now edit every listing.', 'ok');
+  } catch (e) { setAdminMsg('The import stopped part-way (' + ((e && e.code) || 'error') + '). Try again.', 'err'); }
+  S.importing = false; renderAdmin();
+}
+async function updateListing(id, patch, okMsg) {
+  try { await S.db.collection('listings').doc(id).update(patch); setAdminMsg(okMsg, 'ok'); }
+  catch (e) { setAdminMsg('Could not save that change (' + ((e && e.code) || 'error') + ').', 'err'); renderAdmin(); }
+}
+async function removeListing(l) {
+  try { await S.db.collection('listings').doc(l.id).delete(); setAdminMsg(l.name + ' was deleted.', 'ok'); }
+  catch (e) { setAdminMsg('Could not delete ' + l.name + ' (' + ((e && e.code) || 'error') + ').', 'err'); }
+}
+function openListingForm(l) {
+  var isNew = !l;
+  var v = l || norm({ name: '', city: '', region: '', country: '', type: 'Villa', price: 0, scene: { kind: 'modern', seed: Math.floor(Math.random() * 20) + 1 } });
+  var dlg = $('#listingDlg'), body = $('#listingBody');
+  function inp(id, label, val, type, extra) { var i = h('input', Object.assign({ id: 'lf-' + id, type: type || 'text', value: val == null ? '' : val }, extra || {})); return { el: h('label', { class: 'fld' }, h('span', { text: label }), i), i: i }; }
+  var name = inp('name', 'Residence name', v.name), city = inp('city', 'City', v.city), region = inp('region', 'Region or state', v.region), country = inp('country', 'Country', v.country);
+  var type = inp('type', 'Type', v.type, 'text', { list: 'lf-types' });
+  var dl = h('datalist', { id: 'lf-types' }, ['Villa', 'Château', 'Penthouse', 'Chalet', 'Waterfront', 'Beachfront', 'Island', 'Estate', 'Townhouse'].map(function (t) { return h('option', { value: t }); }));
+  var price = inp('price', 'Asking price (USD)', v.price || '', 'number', { min: '0', step: '100000' });
+  var beds = inp('beds', 'Bedrooms', v.beds || '', 'number', { min: '0' }), baths = inp('baths', 'Bathrooms', v.baths || '', 'number', { min: '0' });
+  var sqm = inp('sqm', 'Interior area (m²)', v.sqm || '', 'number', { min: '0' }), land = inp('land', 'Land', v.land), year = inp('year', 'Year built', v.year, 'text');
+  var status = h('select', { id: 'lf-status' }, ['Available', 'Under Offer', 'Sold'].map(function (s) { return h('option', { value: s, text: s, selected: s === v.status }); }));
+  var featured = h('input', { id: 'lf-featured', type: 'checkbox', checked: v.featured });
+  var tagline = inp('tagline', 'Tagline', v.tagline);
+  var desc = h('textarea', { id: 'lf-desc', rows: '4' }); desc.value = v.desc || ''; 
+  var photo = h('input', { id: 'lf-photo', type: 'file', accept: 'image/*' });
+  var photoPreview = h('div', { class: 'prev' });
+  if (v.image) photoPreview.append(h('img', { src: v.image, alt: 'Current estate photo', style: 'width:100%;height:100%;object-fit:cover' }));
+  photo.addEventListener('change', function () {
+    var f = photo.files && photo.files[0]; if (!f) return;
+    if (f.size > 1500000) { err.textContent = 'Please choose an image smaller than 1.5 MB.'; photo.value = ''; return; }
+    var r = new FileReader(); r.onload = function () { photoPreview.replaceChildren(h('img', { src: r.result, alt: 'Estate photo preview', style: 'width:100%;height:100%;object-fit:cover' })); photo._data = r.result; }; r.readAsDataURL(f);
+  });
+  var feats = h('textarea', { id: 'lf-feats', rows: '5', placeholder: 'One highlight per line' }); feats.value = (v.features || []).join('\n');
+  var kind = h('select', { id: 'lf-kind' }, [['modern', 'Modern villa'], ['chateau', 'Château or townhouse'], ['skyline', 'City skyline'], ['island', 'Island'], ['chalet', 'Alpine chalet'], ['coastal', 'Coastal']].map(function (k) { return h('option', { value: k[0], text: k[1], selected: k[0] === v.scene.kind }); }));
+  var seed = inp('seed', 'Illustration variant (1 to 40)', v.scene.seed, 'number', { min: '1', max: '40' });
+  var prev = h('div', { class: 'prev' });
+  function drawPrev() { prev.innerHTML = scene(kind.value, Number(seed.i.value) || 1); }
+  kind.addEventListener('change', drawPrev); seed.i.addEventListener('input', drawPrev); drawPrev();
+  var err = h('p', { class: 'form-status err', role: 'alert' });
+  var save = h('button', { class: 'btn', type: 'submit', text: isNew ? 'Add listing' : 'Save changes' });
+  function wrap(label, el) { return h('label', { class: 'fld' }, h('span', { text: label }), el); }
+  var form = h('form', { class: 'lf', novalidate: true },
+    h('div', null, h('p', { class: 'eyebrow', text: isNew ? 'New listing' : 'Edit listing' }), h('h2', { style: 'font-size:2rem', text: isNew ? 'Add a residence' : v.name })),
+    name.el, h('div', { class: 'grid2' }, city.el, region.el, country.el), h('div', { class: 'grid2' }, type.el, price.el, wrap('Status', status)),
+    h('div', { class: 'grid2' }, beds.el, baths.el, sqm.el), h('div', { class: 'grid2' }, land.el, year.el),
+    h('label', { class: 'fld check' }, featured, h('span', { text: 'Feature on the home page' })),
+    tagline.el, wrap('Description', desc), wrap('Estate photo (optional, max 1.5 MB)', photo), photoPreview, wrap('Highlights', feats),
+    h('div', { class: 'grid2' }, wrap('Illustration style', kind), seed.el), prev, dl, err, h('div', null, save));
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault(); err.textContent = '';
+    var nm = name.i.value.trim(), pr = Number(price.i.value);
+    if (!nm) { err.textContent = 'Enter a residence name.'; name.i.focus(); return; }
+    if (!city.i.value.trim()) { err.textContent = 'Enter the city.'; city.i.focus(); return; }
+    if (!(pr >= 0)) { err.textContent = 'Enter the asking price as a number, or leave it empty for price on request.'; price.i.focus(); return; }
+    var id = isNew ? (slug(nm) || 'residence') + '-' + Math.random().toString(36).slice(2, 6) : l.id;
+    var obj = { id: id, name: nm, city: city.i.value.trim(), region: region.i.value.trim(), country: country.i.value.trim(), type: type.i.value.trim() || 'Estate', price: pr || 0,
+      beds: Number(beds.i.value) || 0, baths: Number(baths.i.value) || 0, sqm: Number(sqm.i.value) || 0, land: land.i.value.trim(), year: year.i.value.trim(), status: status.value, featured: featured.checked,
+      tagline: tagline.i.value.trim(), desc: desc.value.trim(), image: photo._data || v.image || '', features: feats.value.split('\n').map(function (t) { return t.trim(); }).filter(Boolean).slice(0, 14),
+      scene: { kind: kind.value, seed: Math.max(1, Math.min(40, Number(seed.i.value) || 1)) } };
+    save.disabled = true;
+    try { await S.db.collection('listings').doc(id).set(obj); dlg.close(); setAdminMsg(nm + (isNew ? ' was added.' : ' was saved.'), 'ok'); }
+    catch (ex) { err.textContent = 'Could not save (' + ((ex && ex.code) || 'error') + '). Check that you are signed in as the owner or an editor.'; }
+    save.disabled = false;
+  });
+  body.replaceChildren(form);
+  dlg.showModal(); dlg.scrollTop = 0;
+}
+function adminInquiries(msg) {
+  var list = S.inquiries.slice().sort(function (a, b) { return String(b.createdAt).localeCompare(String(a.createdAt)); });
+  var wrap = h('div', { class: 'inq' });
+  if (!S.db) { wrap.append(h('div', { class: 'notice', text: 'The database is not reachable from this view.' })); return wrap; }
+  var shown = list.filter(function (q) { return (S.istate[q.id] || {}).status !== 'archived'; });
+  if (!shown.length) {
+    wrap.append(h('div', { class: 'empty' }, h('h3', { text: 'No inquiries yet' }), h('p', { text: 'Requests sent from the residence pages and the contact form appear here.' })));
+    return wrap;
+  }
+  shown.forEach(function (q) {
+    var st = (S.istate[q.id] || {}).status || 'new';
+    var when = ''; try { when = new Date(q.createdAt).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' }); } catch (e) { when = q.createdAt || ''; }
+    wrap.append(h('div', { class: 'inq-card' + (st === 'handled' ? ' handled' : '') },
+      h('div', { class: 'inq-head' }, h('strong', { text: q.name || 'Unnamed' }), h('span', null, h('span', { class: 'pill ' + (st === 'new' ? 'new' : ''), text: st === 'handled' ? 'Handled' : 'New' }), '  ', h('span', { class: 'muted', style: 'font-size:.8rem', text: when }))),
+      h('div', { class: 'inq-meta' }, h('span', { text: q.email || '' }), q.phone ? h('span', { text: q.phone }) : null, q.budget ? h('span', { text: 'Budget: ' + q.budget }) : null, h('span', { text: q.listingName ? 'About: ' + q.listingName : 'General inquiry' })),
+      q.message ? h('p', { class: 'inq-msg', text: q.message }) : null,
+      h('div', { class: 'acts', style: 'display:flex;gap:6px;flex-wrap:wrap' },
+        h('button', { class: 'btn ghost sm', type: 'button', text: st === 'handled' ? 'Reopen' : 'Mark handled', onclick: function () { setInqState(q.id, st === 'handled' ? 'new' : 'handled'); } }),
+        h('button', { class: 'btn ghost sm', type: 'button', text: 'Copy email', onclick: function (ev) { var b = ev.currentTarget; copyText(q.email || '', function (ok) { b.textContent = ok ? 'Copied' : 'Copy failed'; }); } }),
+        h('button', { class: 'btn danger sm', type: 'button', text: 'Archive', onclick: function () { setInqState(q.id, 'archived'); } }))));
+  });
+  return wrap;
+}
+async function setInqState(id, status) {
+  try { await S.db.doc('inquiry_state/' + id).set({ status: status }); setAdminMsg(status === 'archived' ? 'Inquiry archived.' : 'Inquiry updated.', 'ok'); }
+  catch (e) { setAdminMsg('Could not update that inquiry (' + ((e && e.code) || 'error') + ').', 'err'); }
+}
+
+/* ---------- wiring ---------- */
+function bindUI() {
+  $('#fSearch').addEventListener('input', function (e) { S.f.q = e.target.value; renderGrid(); });
+  $('#fMax').addEventListener('change', function (e) { S.f.max = Number(e.target.value) || 0; renderGrid(); });
+  $('#fSort').addEventListener('change', function (e) { S.f.sort = e.target.value; renderGrid(); });
+  $('#contactForm').append(inquiryForm({ prefix: 'cq', cta: 'Send to the private office', placeholder: 'Regions, style of home, timing, and anything else that matters to you.' }));
+  $('#btnCopyMail').addEventListener('click', function (e) { var b = e.currentTarget; copyText(CONTACT_EMAIL, function (ok) { b.textContent = ok ? 'Copied' : 'Select the address'; setTimeout(function () { b.textContent = 'Copy'; }, 1800); }); });
+  $('#chatFab').addEventListener('click', function () { if ($('#chat').hidden) openChat(); else closeChat(); });
+  $('#chatClose').addEventListener('click', closeChat);
+  $('#btnChatTop').addEventListener('click', function () { openChat(); });
+  $('#btnChatHero').addEventListener('click', function () { openChat(); });
+  $('#chatForm').addEventListener('submit', function (e) { e.preventDefault(); var i = $('#chatInput'); var t = i.value; i.value = ''; sendChat(t); });
+  $('#chat').addEventListener('keydown', function (e) { if (e.key === 'Escape') closeChat(); });
+  $('#btnAdminTop').addEventListener('click', openAdmin);
+  $('#footAdmin').addEventListener('click', function (e) { e.preventDefault(); openAdmin(); });
+  document.querySelectorAll('[data-close]').forEach(function (b) { b.addEventListener('click', function () { $('#' + b.getAttribute('data-close')).close(); }); });
+  $('#admin').addEventListener('close', function () { if (location.hash === '#admin') { try { history.replaceState(null, '', location.pathname + location.search); } catch (e) { location.hash = ''; } } });
+  $('#btnTheme').addEventListener('click', function () {
+    var root = document.documentElement;
+    var cur = root.getAttribute('data-theme') || (window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    var next = cur === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('aurelian-theme', next); } catch (e) {}
+  });
+  var saved = null; try { saved = localStorage.getItem('aurelian-theme'); } catch (e) {}
+  document.documentElement.setAttribute('data-theme', saved === 'light' ? 'light' : 'dark');
+  window.addEventListener('hashchange', function () { if (location.hash === '#admin' && !$('#admin').open) openAdmin(); });
+  if (location.hash === '#admin') openAdmin();
+}
+function onListings(snap) {
+  if (snap.size > 0) {
+    S.all = snap.docs.map(function (d) { return norm(Object.assign({}, d.data(), { id: d.id })); });
+    S.fromDb = true;
+  } else { S.all = DEFAULTS.map(norm); S.fromDb = false; }
+  renderAll();
+  if ($('#admin').open) renderAdmin();
+}
+async function init() {
+  renderAll();
+  bindUI();
+  var c = window.claude;
+  if (!c || !c.use) return;
+  function get(n) { return Promise.resolve(c.use(n)).catch(function () { return null; }); }
+  var res = await Promise.all([get('db'), get('user'), get('sample')]);
+  S.db = res[0]; S.sample = res[2];
+  var user = res[1];
+  if (user) { try { S.canEdit = await user.canEdit(); S.uid = await user.id(); } catch (e) {} }
+  $('#btnAdminTop').hidden = !S.canEdit;
+  if (S.db) {
+    try { S.db.collection('listings').onSnapshot(onListings, function () {}); } catch (e) {}
+    if (S.canEdit) {
+      try {
+        unsubInq = S.db.collection('inquiries').onSnapshot(function (snap) {
+          var out = [];
+          snap.docs.forEach(function (d) { var items = (d.data() || {}).items; if (Array.isArray(items)) items.forEach(function (it) { out.push(it); }); });
+          S.inquiries = out; if ($('#admin').open) renderAdmin();
+        }, function () {});
+        unsubState = S.db.collection('inquiry_state').onSnapshot(function (snap) {
+          var m = {}; snap.docs.forEach(function (d) { m[d.id] = d.data(); });
+          S.istate = m; if ($('#admin').open) renderAdmin();
+        }, function () {});
+      } catch (e) {}
+    }
+  }
+  if ($('#admin').open) renderAdmin();
+}
+init();
+})();
+</script>
+
+</body></html>
